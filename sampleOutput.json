@@ -1,8 +1,15 @@
-import react, { Component } from 'react'
-import NewsItems from './NewsItems'
-
-export class News extends Component {
-    articles = [
+{
+    "status": "ok",
+    "sources": [
+        {
+            "id": "argaam",
+            "name": "Argaam",
+            "description": "ارقام موقع متخصص في متابعة سوق الأسهم السعودي تداول - تاسي - مع تغطيه معمقة لشركات واسعار ومنتجات البتروكيماويات , تقارير مالية الاكتتابات الجديده ",
+            "url": "https://www.argaam.com",
+            "category": "business",
+            "language": "ar",
+            "country": "sa"
+        },
         {
             "id": "australian-financial-review",
             "name": "Australian Financial Review",
@@ -112,29 +119,4 @@ export class News extends Component {
             "country": "de"
         }
     ]
-    constructor() {
-        super();
-        console.log('NewsItems Constructor');
-        this.state = {
-            articles: this.articles,
-            loading: false
-        }
-    }
-
-    render() {
-        return (
-            <div className='container my-3'>
-                <h2>Top Headlines</h2>
-                <div className='row'>
-                    {this.state.articles.map((element) => {
-                        return <div className='col-md-4' key={element.url} >
-                            <NewsItems title={element.name} description={element.description} imageUrl={element.imageUrl} newsUrl={element.url} />
-                        </div>
-                    })}
-                </div>
-            </div>
-        )
-    }
 }
-
-export default News
