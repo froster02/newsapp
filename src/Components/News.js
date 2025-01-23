@@ -2,6 +2,36 @@ import React, { Component } from 'react'
 import propTypes from 'prop-types'
 import NewsItems from './NewsItems'
 
+/**
+ * News component that fetches and displays news articles.
+ * @extends Component
+ * @class
+ * 
+ * @property {Object} state - Component state
+ * @property {Array} state.articles - Array of news articles
+ * @property {boolean} state.loading - Loading state indicator
+ * @property {number} state.page - Current page number
+ * @property {number} state.pageSize - Number of articles per page
+ * @property {number} state.totalResults - Total number of available articles
+ * @property {string|null} state.error - Error message if fetch fails
+ * 
+ * @property {Object} defaultProps - Default properties
+ * @property {string} defaultProps.country - Default country code for news ('us')
+ * @property {string} defaultProps.category - Default news category ('sports')
+ * @property {Function} defaultProps.setProgress - Progress indicator function
+ * @property {string} defaultProps.apiKey - API key for news service
+ * 
+ * @property {Object} propTypes - Component prop types
+ * @property {string} propTypes.country - Country code for news articles
+ * @property {string} propTypes.category - Category of news articles
+ * @property {Function} propTypes.setProgress - Function to update progress bar
+ * @property {string} propTypes.apiKey - API key for authentication
+ * 
+ * @method updateNews - Fetches news articles from the API
+ * @method componentDidMount - Lifecycle method that calls updateNews on mount
+ * @method handlePrev - Handles pagination to previous page
+ * @method handleNext - Handles pagination to next page
+ */
 export class News extends Component {
 
     constructor() {
