@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+// converting class based component to functional component
 export class navbar extends Component {
     static propTypes = {
 
