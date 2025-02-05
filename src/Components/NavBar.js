@@ -7,7 +7,7 @@
  * 
  * @returns {JSX.Element} Navigation bar with category links
  */
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 // converting class based component to functional component
