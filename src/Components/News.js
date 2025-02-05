@@ -54,7 +54,6 @@ const News = (props) => {
 
     useEffect(() => {
         updateNews();
-        // eslint-disable-next-line
     }, []);
 
     const handlePrev = async () => {
@@ -69,18 +68,20 @@ const News = (props) => {
 
     return (
         <div className='container my-3'>
-            <h1 className='text-center'>Top Headlines</h1>
-            <div className='row mb-4'>
-                {articles.map((element) => (
-                    <div className='col-md-4' key={element.url}>
-                        <NewsItems
-                            title={element.title}
-                            description={element.description}
-                            imageUrl={element.urlToImage}
-                            newsUrl={element.url}
-                        />
-                    </div>
-                ))}
+            <div>
+                <h1 className='text-center' style={{ marginTop: '90px', marginBottom: '30px' }}>Top Headlines</h1>
+                <div className='row mb-4'>
+                    {articles.map((element) => (
+                        <div className='col-md-4' key={element.url}>
+                            <NewsItems
+                                title={element.title}
+                                description={element.description}
+                                imageUrl={element.urlToImage}
+                                newsUrl={element.url}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
             <div className='container d-flex justify-content-between'>
                 <button disabled={page <= 1} type='button' className='btn btn-dark' onClick={handlePrev}>&larr; Previous</button>
