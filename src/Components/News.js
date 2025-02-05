@@ -3,34 +3,25 @@ import NewsItems from './NewsItems';
 import PropTypes from 'prop-types';
 
 /**
- * News component that fetches and displays news articles.
- * @extends Component
- * @class
+ * @component News
+ * @description Fetches and displays news articles with pagination
  * 
- * @property {Object} state - Component state
- * @property {Array} state.articles - Array of news articles
- * @property {boolean} state.loading - Loading state indicator
- * @property {number} state.page - Current page number
- * @property {number} state.pageSize - Number of articles per page
- * @property {number} state.totalResults - Total number of available articles
- * @property {string|null} state.error - Error message if fetch fails
+ * @state {Array} articles - Array of news articles
+ * @state {boolean} loading - Loading state for fetch operations
+ * @state {number} page - Current page number for pagination
+ * @state {number} totalResults - Total number of available articles
  * 
- * @property {Object} defaultProps - Default properties
- * @property {string} defaultProps.country - Default country code for news ('us')
- * @property {string} defaultProps.category - Default news category ('sports')
- * @property {Function} defaultProps.setProgress - Progress indicator function
- * @property {string} defaultProps.apiKey - API key for news service
+ * @prop {string} country - Country code for news articles (default: 'us')
+ * @prop {string} category - Category of news to fetch (default: 'sports')
+ * @prop {Function} setProgress - Function to update loading progress
+ * @prop {string} apiKey - API key for news service
+ * @prop {number} pageSize - Number of articles per page (default: 9)
  * 
- * @property {Object} propTypes - Component prop types
- * @property {string} propTypes.country - Country code for news articles
- * @property {string} propTypes.category - Category of news articles
- * @property {Function} propTypes.setProgress - Function to update progress bar
- * @property {string} propTypes.apiKey - API key for authentication
+ * @function updateNews - Fetches news articles from the API
+ * @function handlePrev - Handles pagination to previous page
+ * @function handleNext - Handles pagination to next page
  * 
- * @method updateNews - Fetches news articles from the API
- * @method componentDidMount - Lifecycle method that calls updateNews on mount
- * @method handlePrev - Handles pagination to previous page
- * @method handleNext - Handles pagination to next page
+ * @returns {JSX.Element} News component with article grid and pagination
  */
 
 const News = (props) => {

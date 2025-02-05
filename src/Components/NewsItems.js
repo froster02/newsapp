@@ -1,3 +1,14 @@
+/**
+ * @component NewsItems
+ * @description Displays individual news article card
+ * 
+ * @prop {string} title - Title of the news article
+ * @prop {string} description - Brief description of the article
+ * @prop {string} imageUrl - URL of the article's image
+ * @prop {string} newsUrl - URL to the full article
+ * 
+ * @returns {JSX.Element} News article card with image, title, and description
+ */
 import React from 'react'
 
 

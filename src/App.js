@@ -1,3 +1,12 @@
+/**
+ * @component App
+ * @description Main application component that handles routing and layout
+ * 
+ * @state {number} progress - Controls the progress bar state (0-100)
+ * @constant {string} apiKey - News API key from environment variables
+ * 
+ * @returns {JSX.Element} Root application component with router and news sections
+ */
 import React, { useState } from 'react'
 import Navbar from './Components/NavBar.js'
 import './App.css';
