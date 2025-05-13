@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# NewsApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+NewsApp is a web-based application that provides users with the latest news articles from various categories like Business, Sports, Health, and more. Built using React, it includes features like pagination, dynamic category navigation, and a responsive UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Frontend:
+- 📰 **Dynamic News Categories**: Users can browse news articles filtered by categories such as Business, Entertainment, Sports, Health, and Science.
+- 🔄 **Pagination**: Efficiently navigate through multiple pages of articles.
+- 🖼️ **News Cards**: Articles are displayed in a card layout with images, titles, and descriptions.
+- 📊 **Loading Indicator**: A top-loading bar indicates the progress of API requests.
+- 🌐 **Responsive Design**: Styled using Bootstrap for a modern and mobile-friendly interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backend:
+- **API Integration**:
+  - Fetches news articles dynamically from the **NewsAPI**.
+  - Supports filtering by country, category, and pagination.
+- **Environment Variable Support**:
+  - API keys are securely managed using environment variables.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend:
+- **React (via Create React App)**: For building the user interface.
+- **React Router**: For seamless navigation between news categories.
+- **Bootstrap**: For responsive styling and layout.
+- **React Top Loading Bar**: For visual feedback on API request progress.
 
-### `npm run build`
+### Backend:
+- **NewsAPI**: Integrated as an external API to fetch live news articles.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## React Hooks Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **`useState`**:
+   - Manages local state such as the list of articles, loading status, current page, and total results.
+   - Example: Used in `News.js` to track articles and pagination.
 
-### `npm run eject`
+2. **`useEffect`**:
+   - Handles side effects like fetching news articles when the component mounts or the page/category changes.
+   - Example: Used in `News.js` to call the `updateNews` function dynamically.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Components
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **`App.js`**:
+   - The root component that handles routing and integrates the Navbar and News components.
+   - Manages the progress state for the top-loading bar.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **`NavBar.js`**:
+   - A responsive navigation bar with links to various news categories.
 
-## Learn More
+3. **`News.js`**:
+   - The main component to display news articles.
+   - Fetches articles from NewsAPI and supports pagination.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **`NewsItems.js`**:
+   - Displays individual news articles in a card format with title, description, and image.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Prerequisites
 
-### Analyzing the Bundle Size
+- Node.js and npm installed on your machine.
+- A valid API key from [NewsAPI](https://newsapi.org/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Installation
 
-### Making a Progressive Web App
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/froster02/newsapp.git
+   cd newsapp
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### Advanced Configuration
+3. Configure the API key:
+   - Create a `.env` file in the root directory.
+   - Add your NewsAPI key:
+     ```
+     REACT_APP_NEWS_API=<your_api_key>
+     ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-### Deployment
+   Access the app at [http://localhost:3000](http://localhost:3000).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `npm start`: Runs the app in development mode.
+- `npm test`: Launches the test runner.
+- `npm run build`: Builds the app for production.
+
+---
+
+## API Endpoints
+
+The application integrates with the **NewsAPI** using the following parameters:
+- **Country**: Specifies the country for news articles (e.g., `us`, `in`).
+- **Category**: Filters news articles by categories such as Business, Entertainment, Sports, etc.
+- **Pagination**: Supports fetching articles in pages using `page` and `pageSize`.
+
+---
+
+## License
+
+This project is currently not licensed. Add a license if needed.
+
+---
+
+## Contact
+
+For questions or feedback, feel free to reach out:
+
+- GitHub: [froster02](https://github.com/froster02)
+
+---
+
+Made with ❤️ by froster02.
